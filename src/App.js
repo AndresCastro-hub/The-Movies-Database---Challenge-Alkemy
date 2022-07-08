@@ -1,10 +1,11 @@
+import { Switch , Route} from "react-router-dom";
+
 import Login from "./components/Login";
 import List from "./components/List";
-import { Switch , Route} from "react-router-dom";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import Detalle from './components/Detalle';
-
+import Resultados from "./components/Resultados";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
       <Switch>
         <Route exact path="/" component = {Login} />
         <Route path="/listado" component = {List} />
-        <Route   path="/detalle" component = {Detalle} />
+        <Route path="/detalle" component = {Detalle} />
+        <Route path="/resultados" component = {Resultados} />
+        
       </Switch>
     </div>
   

@@ -12,7 +12,7 @@ const List = () => {
   const SwalAlert = withReactContent(Swal)
 
   useEffect (() => {
-    const url = 'https://api.themoviedb.org/3/discover/movie?api_key=fa55cfc769260df825a027aecef54fcb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&';
+    const url = 'https://api.themoviedb.org/3/discover/movie?api_key=fa55cfc769260df825a027aecef54fcb&language=en-ES&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&';
     axios
       .get(url)
       .then( respuesta => {
@@ -30,23 +30,22 @@ const List = () => {
 
       <div className="row m-4">
 
-      {
-        moviesList.map( (movie, id) =>{
-          return(
-            <div key={id}  className="col-3">
-              <div className="card my-4"  >
-                <img className="card-img-top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="Card image cap"/>
-                <div className="card-body">
-                  <h5 className="card-title">{movie.title}</h5>
-                  <p className="card-text">{movie.overview.substring(0,100)}...</p>
-                  <Link to={`/detalle?id=${movie.id}`} className="btn btn-primary">Ver mas</Link>
+        {
+          moviesList.map( (movie, id) =>{
+            return(
+              <div key={id}  className="col-3">
+                <div className="card my-4"  >
+                  <img className="card-img-top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="Card image cap"/>
+                  <div className="card-body">
+                    <h5 className="card-title">{movie.title}</h5>
+                    <p className="card-text">{movie.overview.substring(0,100)}...</p>
+                    <Link to={`/detalle?id=${movie.id}`} className="btn btn-primary">Ver mas</Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          )
-        })
-      }
-        
+            )
+          })
+        }
       
       </div>
     </>
