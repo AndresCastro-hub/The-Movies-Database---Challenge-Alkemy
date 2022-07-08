@@ -3,8 +3,9 @@ import { Link, Redirect } from "react-router-dom"
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content';
+import './styles.css'
 
-const List = () => {
+const List = (props) => {
 
   const [moviesList , setMoviesList] = useState([]);
 
@@ -36,6 +37,7 @@ const List = () => {
               <div key={id}  className="col-3">
                 <div className="card my-4"  >
                   <img className="card-img-top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="Card image cap"/>
+                  <button onClick={props.agregarOEliminarFavoritos} data-movie-id = {movie.id} className="favouriteBtn">❤️</button>
                   <div className="card-body">
                     <h5 className="card-title">{movie.title}</h5>
                     <p className="card-text">{movie.overview.substring(0,100)}...</p>

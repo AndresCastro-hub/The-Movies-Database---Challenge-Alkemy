@@ -18,6 +18,9 @@ const Menu = () => {
                     <li className="nav-item">
                         <Link className="nav-link" to="/listado">Listado</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/favoritos">Favoritos</Link>
+                    </li>
                 </ul>
             </div>
                 <Buscador/>
