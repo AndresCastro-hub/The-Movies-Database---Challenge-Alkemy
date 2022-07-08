@@ -1,20 +1,9 @@
 import { Link } from "react-router-dom"
+import Buscador from "./Buscador"
 import '../app.css'
 
 const Menu = () => {
   return (
-    // <header>
-    //     <nav className="menu">
-    //         <ul>
-    //             <li>
-    //                 <Link to="/">Home</Link>
-    //             </li>
-    //             <li>
-    //                 <Link className="menuItem"  to="/listado">Listado</Link>
-    //             </li>
-    //         </ul>
-    //     </nav>
-    // </header>
 
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark " style={{paddingLeft:'50px'}} >
         <span className="navbar-brand" >Movies</span>
@@ -31,6 +20,7 @@ const Menu = () => {
                     </li>
                 </ul>
             </div>
+                <Buscador/>
     </nav>
     
   )

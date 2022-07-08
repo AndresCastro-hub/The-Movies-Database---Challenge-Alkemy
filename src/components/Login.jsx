@@ -1,8 +1,7 @@
 import axios from "axios";
-
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content';
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 const Login = () => {
 
@@ -35,26 +34,32 @@ const Login = () => {
     axios
       .post('http://challenge-react.alkemy.org', { email , password })
       .then (res => { 
-        SwalAlert.fire('Se envio toda la info correctamente') 
+        SwalAlert.fire('Perfecto, ingresaste correctamente') 
         const token = res.data.token;
-        localStorage.setItem('token' , token);
+        sessionStorage.setItem('token' , token);
         history.push('/listado');
       })
   }
 
+  let token = sessionStorage.getItem('token');
+
   return (
-    <div className="container">
-      <h2 className="login">Login</h2>
-        <form onSubmit={handlerSubmit}>
-          <span>Correo Electronico:</span> <br /> 
-          <input className="campos" type="email" name="email" />
-          <br />
-          <span>Contraseña:</span> <br />
-          <input className="campos" type="password" name="password" />
-          <br />
-          <button className="ingresar" type="submit">Ingresar</button>
-        </form>
-    </div>
+    <>
+      {token && <Redirect to='listado'/>}
+        <div className="container">
+          <h2 className="login">Login</h2>
+            <form onSubmit={handlerSubmit}>
+              <span>Correo Electronico:</span> <br /> 
+              <input className="campos" type="email" name="email" />
+              <br />
+              <span>Contraseña:</span> <br />
+              <input className="campos" type="password" name="password" />
+              <br />
+              <button className="ingresar" type="submit">Ingresar</button>
+            </form>
+        </div>
+    </>
+
   )
 }
 
