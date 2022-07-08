@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 15px;
+}
+
+.menu ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+   
+    
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.container{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingresar{
+    background-color: black;
+    color: white;
+    border-radius: 2px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.login{
+    margin-bottom: 10px;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.info{
+    color: white;
+}
+
+.linkedin{
+    text-decoration: none;
+    color:aqua;
+}

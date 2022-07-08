@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom"
+import '../app.css'
+
 const Menu = () => {
   return (
     <header>
-        <nav>
+        <nav className="menu">
             <ul>
                 <li>
                     <Link to="/">Home</Link>

@@ -40,13 +40,11 @@ const Login = () => {
         localStorage.setItem('token' , token);
         history.push('/listado');
       })
-
-      
   }
 
   return (
-    <>
-      <h2>Login</h2>
+    <div className="container">
+      <h2 className="login">Login</h2>
         <form onSubmit={handlerSubmit}>
           <span>Correo Electronico:</span> <br /> 
           <input type="email" name="email" />
@@ -54,9 +52,9 @@ const Login = () => {
           <span>Contraseña:</span> <br />
           <input type="password" name="password" />
           <br />
-          <button type="submit">Ingresar</button>
+          <button className="ingresar" type="submit">Ingresar</button>
         </form>
-    </>
+    </div>
   )
 }
 
