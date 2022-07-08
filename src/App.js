@@ -10,10 +10,12 @@ function App() {
     <>
     <Menu/>
 
+    <div className="container mt-3">
       <Switch>
         <Route exact path="/" component = {Login} />
         <Route   path="/listado" component = {List} />
       </Switch>
+    </div>
 
     <Footer/>
     </>

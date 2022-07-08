@@ -47,10 +47,10 @@ const Login = () => {
       <h2 className="login">Login</h2>
         <form onSubmit={handlerSubmit}>
           <span>Correo Electronico:</span> <br /> 
-          <input type="email" name="email" />
+          <input className="campos" type="email" name="email" />
           <br />
           <span>Contraseña:</span> <br />
-          <input type="password" name="password" />
+          <input className="campos" type="password" name="password" />
           <br />
           <button className="ingresar" type="submit">Ingresar</button>
         </form>
